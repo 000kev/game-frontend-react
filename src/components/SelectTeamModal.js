@@ -10,9 +10,9 @@ export default function SelectTeamModal({ teams }) {
         // const isPending = () => {
         //   return team.teamRequests.includes(username);
         // };
-        const btnClass = "bg-sky-400/[.6] px-5 py-1 text-md text-sky-400 rounded-2xl";
+        const btnClass = "bg-blue-600/[.6] px-5 py-1 text-md text-sky-400 rounded-2xl";
         const spanClass =
-          "flex flex-row gap-x-10 bg-blue-600/[.6] p-5 mb-3 rounded-3xl text-xl";
+          "flex flex-row gap-x-10 bg-sky-400/[.6] p-5 mb-3 rounded-3xl text-xl";
 
         return (
           <Form
