@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# React-app-frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React application serves as the front-end of a fullstack application with this [Spring-app-backend](https://github.com/000kev/spring-app-backend) code working as the backend.
+
 
 ## Available Scripts
 
