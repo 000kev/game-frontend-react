@@ -5,7 +5,7 @@ import { redirect } from "react-router";
 
 export default function TeamViewer() {
   const loaderData = useLoaderData();
-  const username = localStorage.getItem("username");
+  const username = sessionStorage.getItem("username");
   const submit = useSubmit()
 
   const joinHandler = (event, teamname) => {
@@ -27,7 +27,7 @@ export default function TeamViewer() {
 
 export async function ViewerAction({request}) {
     const { teamname } = Object.fromEntries(await request.formData())
-    const token = localStorage.getItem("token")
+    const token = sessionStorage.getItem("token")
 
     try {
         const response = await fetch(`http://localhost:7546/team/request/${teamname}`, {
@@ -46,7 +46,7 @@ export async function ViewerAction({request}) {
 }
 
 export async function ViewerLoader() {
-  const token = localStorage.getItem("token");
+  const token = sessionStorage.getItem("token");
 
   try {
     const response = await fetch("http://localhost:7546/team/viewAll", {

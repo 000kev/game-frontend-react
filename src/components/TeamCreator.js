@@ -42,8 +42,7 @@ export async function CreatorAction({ request }) {
     teamName,
     maxMembers,
   };
-  const token = localStorage.getItem("token");
-  localStorage.setItem("teamName", teamName)
+  const token = sessionStorage.getItem("token");
   
   try {
     const response = await fetch("http://localhost:7546/team/create", {
@@ -61,7 +60,6 @@ export async function CreatorAction({ request }) {
 
     const data = await response.json()
     console.log(data)
-    localStorage.setItem("role", "TEAM_LEADER")
     return redirect('/navigation')
 
   } catch (err) {

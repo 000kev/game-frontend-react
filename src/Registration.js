@@ -72,12 +72,11 @@ export async function AuthAction({ request }) {
               } else {
                 const data = await response.json();
                 console.log(data)
-                localStorage.setItem("username", data.username)
-                localStorage.setItem("score", data.score)
-                localStorage.setItem("token", data.token)
-                localStorage.setItem("role", data.role)
+                sessionStorage.setItem("username", data.username)
+                sessionStorage.setItem("score", data.score)
+                sessionStorage.setItem("token", data.token)
                 console.log('Successfully logged in!')
-                return redirect("/Navigation")
+                return redirect("/navigation")
               }
         } catch(err) {
 
@@ -94,10 +93,9 @@ export async function AuthAction({ request }) {
                 return { error: "User already exists!"}
               } else {
                 const data = await response.json();
-                localStorage.setItem("username", data.username);
-                localStorage.setItem("score", data.score);
-                localStorage.setItem("token", data.token);
-                localStorage.setItem("role", data.role);
+                sessionStorage.setItem("username", data.username);
+                sessionStorage.setItem("score", data.score);
+                sessionStorage.setItem("token", data.token);
                 console.log('Successfully registered!')
                 return redirect("/Navigation")
               }

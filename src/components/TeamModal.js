@@ -34,7 +34,7 @@ export default function TeamModal({ teams, username, onJoin }) {
                 disabled={isMember() || isPending()}
                 className={btnClass}
               >
-                {isPending() ? "Pending" : "Join"}
+                {isPending() ? "Pending" : "Join" }
               </button>
             </span>
           </Form>

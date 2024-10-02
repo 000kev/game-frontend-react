@@ -4,7 +4,9 @@ import TeamCreator, {CreatorAction} from "./components/TeamCreator";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ModeLayout from "./ModeLayout";
 import TeamViewer, {ViewerLoader, ViewerAction} from "./components/TeamViewer";
-import TeamSelector, {TeamLoader} from "./components/TeamSelector";
+import TeamSelector, {TeamLoader, TeamAction} from "./components/TeamSelector";
+import TeamEditor, {EditorAction} from "./components/TeamEditor";
+import {DetailsLoader} from "./components/TeamDetails"
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,7 @@ const router = createBrowserRouter([
         path: "navigation",
         element: <ModeLayout />,
         action: ViewerAction,
+        loader: TeamLoader,
         children: [
           {
             path: "",
@@ -34,8 +37,15 @@ const router = createBrowserRouter([
           {
             path: "manage",
             element: <TeamSelector />,
-            loader: TeamLoader
-
+            loader: TeamLoader,
+            action: TeamAction
+          },
+          {
+            path: "manage/:teamname",
+            element: <TeamEditor />,
+            loader: DetailsLoader,
+            action: EditorAction
+            
           }
         ]
       }
